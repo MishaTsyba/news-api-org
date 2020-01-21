@@ -34,16 +34,9 @@ class SearchResultController: UIViewController {
     }
 
 	@IBAction func didTapBackButton(_ sender: Any) {
-
-		let storyboard = UIStoryboard()
-		let vc = storyboard.instantiateViewController(withIdentifier: "SearchInputController") as! SearchInputController
-
 		newsArray = []
-		vc.newsArray = self.newsArray
-		navigationController?.popToViewController(vc, animated: true)
+		navigationController?.popViewController(animated: true)
 	}
-
-
 }
 
 //MARK: - UITableViewDelegate Extension
@@ -66,6 +59,16 @@ extension SearchResultController: UITableViewDelegate, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+		debugPrint("*********** SearchResultController didSelectRowAt  **************")
+
+		let storyboard = UIStoryboard(name: "Main", bundle: nil)
+		let vc = storyboard.instantiateViewController(withIdentifier: "NewsViewController") as! NewsViewController
+
+		vc.newsURL = newsArray[indexPath.row].url ?? ""
+		vc.newsSource = newsArray[indexPath.row].source ?? ""
+
+		navigationController?.pushViewController(vc, animated: false)
     }
 
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

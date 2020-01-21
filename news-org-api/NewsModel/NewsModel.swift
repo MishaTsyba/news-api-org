@@ -10,18 +10,13 @@ import Foundation
 import UIKit
 
 class NewsModel {
-	var status: String?
-	var totalResults: String?
+	var source: String?
 	var articles: [String: Any]?
-	var source: [String: Any]?
-	var id: String?
-	var name: String?
 	var author: String?
 	var title: String?
 	var description: String?
 	var url: String?
 	var urlToImage: String?
 	var publishedAt: String?
-	var content: String?
 	var newsImage: UIImage?
 }

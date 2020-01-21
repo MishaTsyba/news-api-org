@@ -51,7 +51,9 @@ extension NewsCell {
 			newsDescriptionLabel.text = "no time"
 		}
 
-		newsImageView.image = UIImage(named: "!!!anonymous")
+		if let imageURL = URL(string: news.urlToImage ?? ""), let imageData = try? UIImage(data: Data(contentsOf: imageURL)) {
+			newsImageView.image = imageData
+		}
 	}
 }
 
@@ -61,7 +63,7 @@ extension NewsCell {
 		cellBackgroundView.layer.cornerRadius = 10
 
 		newsImageView.clipsToBounds = true
-		newsImageView.layer.cornerRadius = newsImageView.frame.height / 2
+		newsImageView.layer.cornerRadius = 10
 		newsImageView.backgroundColor = .white
 	}
 }
