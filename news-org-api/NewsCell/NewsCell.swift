@@ -51,8 +51,12 @@ extension NewsCell {
 			newsDescriptionLabel.text = "no time"
 		}
 
-		if let imageURL = URL(string: news.urlToImage ?? ""), let imageData = try? UIImage(data: Data(contentsOf: imageURL)) {
-			newsImageView.image = imageData
+		DispatchQueue.global(qos: .utility).async {
+			if let imageURL = URL(string: news.urlToImage ?? ""), let imageData = try? UIImage(data: Data(contentsOf: imageURL)) {
+				DispatchQueue.main.async {
+					self.newsImageView.image = imageData
+				}
+			}
 		}
 	}
 }
