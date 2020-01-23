@@ -103,7 +103,7 @@ extension SearchInputController {
 								self.searchActivityIndicatorView.stopAnimating()
 								self.searchActivityIndicatorView.isHidden = true
 								//alert no results
-								self.searchAlert(title: "FATAL ERROR!!!", message: "Your keyword give no Results, Foo!!!")
+								self.searchAlert(title: "FATAL ERROR!!!", message: "Your keyword has no Results, Foo!!!")
 							}
 						} else {
 							if let articles = json?["articles"] as? [[String: Any]] {
