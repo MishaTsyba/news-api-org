@@ -21,10 +21,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfp-4K-pek">
                                         <rect key="frame" x="57" y="418" width="300" height="60"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9y4-Dd-T86">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your Keyword" minimumFontSize="16" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9y4-Dd-T86">
                                                 <rect key="frame" x="40" y="5" width="255" height="50"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="YsP-bw-pay">
                                                 <rect key="frame" x="5" y="15" width="30" height="30"/>
@@ -112,6 +112,7 @@
                         <outlet property="searchActivityIndicatorView" destination="YsP-bw-pay" id="NoD-pP-bG4"/>
                         <outlet property="searchButton" destination="JPB-SZ-xDO" id="GwJ-pO-Pta"/>
                         <outlet property="searchTetxField" destination="9y4-Dd-T86" id="RuG-g7-0Na"/>
+                        <outlet property="viewBottomConstraint" destination="NtE-Mm-dk2" id="ltA-xL-TbZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iR6-JE-bSF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -130,19 +131,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybe-ei-Psj">
-                                        <rect key="frame" x="108" y="49" width="226" height="80"/>
+                                        <rect key="frame" x="108" y="49" width="294" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="226" id="O8L-VH-ORs"/>
-                                            <constraint firstAttribute="height" constant="80" id="QyC-rd-SRy"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="QyC-rd-SRy"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5o-xg-IcO">
-                                        <rect key="frame" x="8" y="73" width="80" height="32"/>
+                                        <rect key="frame" x="8" y="49" width="80" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="5RB-Ur-jDY"/>
+                                            <constraint firstAttribute="width" constant="80" id="5RB-Ur-jDY"/>
+                                            <constraint firstAttribute="height" constant="80" id="WmZ-uC-geO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Back">
@@ -158,10 +159,10 @@
                                     <constraint firstItem="Ybe-ei-Psj" firstAttribute="top" secondItem="i3k-jK-9lw" secondAttribute="top" constant="49" id="DAx-dR-MF9"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="NTF-g0-Wd0"/>
                                     <constraint firstAttribute="bottom" secondItem="Ybe-ei-Psj" secondAttribute="bottom" constant="20" id="Z5T-bA-WNA"/>
+                                    <constraint firstItem="H5o-xg-IcO" firstAttribute="centerY" secondItem="Ybe-ei-Psj" secondAttribute="centerY" id="fy5-nm-qeO"/>
                                     <constraint firstItem="H5o-xg-IcO" firstAttribute="leading" secondItem="i3k-jK-9lw" secondAttribute="leading" constant="8" id="vJG-nZ-u6Y"/>
-                                    <constraint firstItem="H5o-xg-IcO" firstAttribute="centerY" secondItem="Ybe-ei-Psj" secondAttribute="centerY" id="wME-tk-9T5"/>
                                     <constraint firstItem="Ybe-ei-Psj" firstAttribute="leading" secondItem="H5o-xg-IcO" secondAttribute="trailing" constant="20" id="wxY-z5-o6B"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ybe-ei-Psj" secondAttribute="trailing" constant="80" id="zW7-yu-cI3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ybe-ei-Psj" secondAttribute="trailing" constant="12" id="zW7-yu-cI3"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aLc-j0-Kip">
@@ -200,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrq-nP-y5T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1744.9275362318842" y="59.598214285714285"/>
+            <point key="canvasLocation" x="1662" y="60"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="aGk-JJ-8Gn">
@@ -247,7 +248,6 @@
                                     <constraint firstItem="yOv-hJ-20V" firstAttribute="top" secondItem="F3Z-iD-fRw" secondAttribute="top" constant="49" id="f8L-Te-3rx"/>
                                     <constraint firstItem="wmk-oH-sDM" firstAttribute="leading" secondItem="F3Z-iD-fRw" secondAttribute="leading" constant="8" id="ihd-ES-hqv"/>
                                     <constraint firstAttribute="height" constant="149" id="unl-rA-Ccq"/>
-                                    <constraint firstItem="yOv-hJ-20V" firstAttribute="leading" secondItem="wmk-oH-sDM" secondAttribute="trailing" constant="20" id="veC-yR-ay9"/>
                                 </constraints>
                             </view>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHq-lh-Jqi">
@@ -281,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkB-7E-1bJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2540.579710144928" y="59.598214285714285"/>
+            <point key="canvasLocation" x="2303" y="60"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8w0-yR-DbW">

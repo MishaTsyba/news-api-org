@@ -8,12 +8,15 @@
 
 import UIKit
 
-class SearchInputController: UIViewController, UITextFieldDelegate {
+class SearchInputController: UIViewController {
 
 	@IBOutlet weak var searchTetxField: UITextField!
 	@IBOutlet weak var searchButton: UIButton!
 	@IBOutlet weak var inputBackgroundView: UIView!
 	@IBOutlet weak var searchActivityIndicatorView: UIActivityIndicatorView!
+
+	@IBOutlet weak var viewBottomConstraint: NSLayoutConstraint!
+
 
 	var newsArray = [NewsModel]()
 
@@ -41,6 +44,7 @@ class SearchInputController: UIViewController, UITextFieldDelegate {
 	}
 }
 
+//MARK: - designUI
 extension SearchInputController {
 	func designUI() {
 		inputBackgroundView.clipsToBounds = true
@@ -48,12 +52,29 @@ extension SearchInputController {
 	}
 }
 
+//MARK: - keyboardWillHide
 extension SearchInputController {
 	@objc func keyboardWillHide() {
+		viewBottomConstraint.constant = 0
 		self.view.endEditing(true)
 	}
 }
 
+//MARK: - UITextFieldDelegate
+extension SearchInputController: UITextFieldDelegate {
+	func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+		viewBottomConstraint.constant = 250
+		return true
+	}
+
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		searchTetxField.resignFirstResponder()
+		viewBottomConstraint.constant = 0
+		return true
+	}
+}
+
+//MARK: - makeRequest
 extension SearchInputController {
 	func makeRequest() {
 		searchActivityIndicatorView.isHidden = false
@@ -95,6 +116,7 @@ extension SearchInputController {
 	}
 }
 
+//MARK: - parseNewsArticles
 extension SearchInputController {
 	func parseNewsArticles(articles: [[String: Any]]) {
 		for article in articles {
@@ -137,6 +159,7 @@ extension SearchInputController {
 	}
 }
 
+//MARK: - navigate
 extension SearchInputController {
 	func navigate() {
 		DispatchQueue.main.async {
@@ -161,6 +184,7 @@ extension SearchInputController {
 	}
 }
 
+//MARK: - searchAlert
 extension SearchInputController {
 	func searchAlert(title: String, message: String) {
 		let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

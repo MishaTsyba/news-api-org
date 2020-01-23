@@ -21,26 +21,20 @@ class SearchResultController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		debugPrint("results")
-		debugPrint(newsArray)
-		debugPrint(newsArray.count)
 		designUI()
 		titleLabel.text = "Total news: \(newsArray.count)"
 		newsTableView.delegate = self
 		newsTableView.dataSource = self
 		newsTableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "NewsCell")
 		newsTableView.reloadData()
-        // Do any additional setup after loading the view.
     }
 
 	@IBAction func didTapBackButton(_ sender: Any) {
-		newsArray = []
 		navigationController?.popViewController(animated: true)
 	}
 }
 
-//MARK: - UITableViewDelegate Extension
-
+//MARK: - UITableViewDelegate
 extension SearchResultController: UITableViewDelegate, UITableViewDataSource {
 
 	func numberOfSections(in tableView: UITableView) -> Int {
@@ -76,6 +70,7 @@ extension SearchResultController: UITableViewDelegate, UITableViewDataSource {
 	}
 }
 
+//MARK: - designUI
 extension SearchResultController {
 	func designUI() {
 		backgroundView.clipsToBounds = true
