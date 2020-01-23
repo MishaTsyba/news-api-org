@@ -48,7 +48,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPB-SZ-xDO">
-                                        <rect key="frame" x="107" y="498" width="200" height="50"/>
+                                        <rect key="frame" x="57" y="518" width="300" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="21v-s8-cXB"/>
@@ -87,11 +87,12 @@
                                 <constraints>
                                     <constraint firstItem="baq-Pa-NGs" firstAttribute="centerX" secondItem="tsS-JX-B6q" secondAttribute="centerX" id="ArC-Vd-Fgj"/>
                                     <constraint firstItem="cfp-4K-pek" firstAttribute="top" secondItem="umI-gc-vkE" secondAttribute="bottom" constant="50" id="EAP-bb-bhs"/>
-                                    <constraint firstItem="baq-Pa-NGs" firstAttribute="top" secondItem="JPB-SZ-xDO" secondAttribute="bottom" constant="281" id="GH1-IQ-aJw"/>
-                                    <constraint firstItem="JPB-SZ-xDO" firstAttribute="centerX" secondItem="cfp-4K-pek" secondAttribute="centerX" id="P7Z-hJ-Crz"/>
+                                    <constraint firstItem="baq-Pa-NGs" firstAttribute="top" secondItem="JPB-SZ-xDO" secondAttribute="bottom" constant="261" id="I6k-uM-6wp"/>
                                     <constraint firstItem="cfp-4K-pek" firstAttribute="centerX" secondItem="tsS-JX-B6q" secondAttribute="centerX" id="QU1-og-Rjr"/>
-                                    <constraint firstItem="JPB-SZ-xDO" firstAttribute="top" secondItem="cfp-4K-pek" secondAttribute="bottom" constant="20" id="THO-Ni-lko"/>
+                                    <constraint firstItem="JPB-SZ-xDO" firstAttribute="top" secondItem="cfp-4K-pek" secondAttribute="bottom" constant="40" id="THO-Ni-lko"/>
+                                    <constraint firstItem="JPB-SZ-xDO" firstAttribute="trailing" secondItem="cfp-4K-pek" secondAttribute="trailing" id="Uxn-8O-BTc"/>
                                     <constraint firstItem="umI-gc-vkE" firstAttribute="centerX" secondItem="tsS-JX-B6q" secondAttribute="centerX" id="gUJ-x8-lN2"/>
+                                    <constraint firstItem="JPB-SZ-xDO" firstAttribute="leading" secondItem="cfp-4K-pek" secondAttribute="leading" id="kxx-71-Tw2"/>
                                     <constraint firstAttribute="bottom" secondItem="baq-Pa-NGs" secondAttribute="bottom" constant="42" id="lBo-nJ-dgh"/>
                                     <constraint firstItem="cfp-4K-pek" firstAttribute="centerY" secondItem="tsS-JX-B6q" secondAttribute="centerY" id="tpu-64-Rob"/>
                                 </constraints>

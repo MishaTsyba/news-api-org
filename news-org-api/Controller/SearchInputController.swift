@@ -17,7 +17,6 @@ class SearchInputController: UIViewController {
 
 	@IBOutlet weak var viewBottomConstraint: NSLayoutConstraint!
 
-
 	var newsArray = [NewsModel]()
 
     override func viewDidLoad() {
@@ -64,11 +63,16 @@ extension SearchInputController {
 extension SearchInputController: UITextFieldDelegate {
 	func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
 		viewBottomConstraint.constant = 250
+		textField.rightViewMode = .whileEditing
+		return true
+	}
+
+	func textFieldShouldClear(_ textField: UITextField) -> Bool {
 		return true
 	}
 
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		searchTetxField.resignFirstResponder()
+		textField.resignFirstResponder()
 		viewBottomConstraint.constant = 0
 		return true
 	}
@@ -191,10 +195,7 @@ extension SearchInputController {
 
 		let actionOK = UIAlertAction(title: "Ok", style: .default)
 
-		let cancelCancel = UIAlertAction(title: "Cancel", style: .cancel)
-
 		alertController.addAction(actionOK)
-		alertController.addAction(cancelCancel)
 
 		present(alertController, animated: true, completion: nil)
 	}
